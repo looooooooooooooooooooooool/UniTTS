@@ -1,0 +1,20 @@
+{
+    "name": "Fvv-UniTTS",
+    "id": "Fvv-UniTTS",
+    "version": "1.0.0",
+    "description": "安卓tts语音合成",
+    "_dp_type":"nativeplugin",
+    "_dp_nativeplugin":{
+        "android": {
+            "plugins": [
+                {
+                  "type": "module",
+                  "name": "Fvv-UniTTS",
+                  "class": "uni.fvv.tts.UniTTS"
+                }
+            ],
+			"integrateType": "aar",
+            "minSdkVersion": "17"
+        }
+    }
+}

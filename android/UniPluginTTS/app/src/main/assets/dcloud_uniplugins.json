@@ -1,0 +1,13 @@
+{
+  "nativePlugins": [
+    {
+      "plugins": [
+        {
+          "type": "module",
+          "name": "Fvv-UniTTS",
+          "class": "uni.fvv.tts.UniTTS"
+        }
+      ]
+    }
+  ]
+}
