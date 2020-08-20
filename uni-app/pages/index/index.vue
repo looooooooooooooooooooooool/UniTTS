@@ -40,18 +40,19 @@
 			},
 			play(){
 				FvvUniTTS.speak({
-					text:"hello f v v",
+					text:"123456",
 					id:1,
 				});
 			},
 			setEngines(){
-				let setEngine = "com.iflytek.speechcloud"
+				let setEngine = "com.baidu.duersdk.opensdk"
 				
 				//获取已安装的引擎
 				FvvUniTTS.getInstallTTS(res => {
 					if(res == null || res.length <= 0){
 						return
 					}
+					console.log(res)
 					if(JSON.stringify(res).indexOf(setEngine) < 0){
 						console.log("未安装该语音引擎")
 						return
