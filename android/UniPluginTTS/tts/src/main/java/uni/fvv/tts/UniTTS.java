@@ -210,14 +210,16 @@ public class UniTTS extends WXModule {
     }
 
     //开始播放
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @JSMethod(uiThread = false)
     public int speak(JSONObject object){
         String text = SetValue(object,"text","");
         String queue = SetValue(object,"queue","flush");
         String id = SetValue(object,"id",String.valueOf(Math.round(Math.random() * 1000)));
         int queueType = queue.toUpperCase().equals("FLUSH")?0:1;
-        return mSpeech.speak(text,queueType,null,id);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            return mSpeech.speak(text,queueType,null,id);
+        }
+        return mSpeech.speak(text,queueType,null);
     }
 
     //停止
